@@ -54,21 +54,21 @@ const Dashboard: React.FC = () => {
       setNewRepo('');
       setInputError('');
     } catch (err) {
-      setInputError('Repository not found!');
+      setInputError('Repository not found! "Search as author/repository".');
     }
   }
 
   return (
     <>
       <img src={logo} alt="Logo" />
-      <Title>Explore repositórios no Github</Title>
+      <Title>Explore repositories on Github</Title>
       <Form hasError={!!inputError} onSubmit={handleAddRepository}>
         <input
           value={newRepo}
           onChange={e => setNewRepo(e.target.value)}
-          placeholder="Nome do repositório"
+          placeholder="Repository name"
         />
-        <button type="submit">Pesquisar</button>
+        <button type="submit">Search</button>
       </Form>
       {inputError && <Error>{inputError}</Error>}
 
